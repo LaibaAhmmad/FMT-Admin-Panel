@@ -42,7 +42,7 @@ export default function Navbar({heading}) {
 <div className='flex md:gap-x-3 gap-x-2 font-semibold'>
   <div className=' text-right mt-1 '>
 <p className={`text-lg text-[#2F2F2F]  ${montserrat.className} m-0 p-0 font-semibold text-[min(3vw,1.125rem)]`}>John Doe</p>
-<p className={`text-sm text-[#777777] leading-[0px] m-0 p-0 ${montserrat.className}  text-[min(2vw,0.875rem)]font-normal` } onClick={() =>{ redirect('/account')}}  >Account</p>
+<p className={`text-sm text-[#777777] leading-[0px] m-0 p-0 ${montserrat.className}  text-[min(2vw,0.875rem)] font-normal cursor-pointer` } onClick={() =>{ redirect('/account')}}  >Account</p>
 </div>
 <div className='relative'>
 <div className='bg-white rounded-full flex items-center  p-1 md:p-2 ' onClick={()=>{setopenDropdown(!openDropdown)}}> 
