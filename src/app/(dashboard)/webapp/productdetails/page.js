@@ -212,12 +212,12 @@ export default function ProductDetails() {
                       <p> Qty</p>
                        </div>
                         <div className='flex gap-x-2  mt-[15px] pb-[15px]'>
-                          <div className='flex items-center gap-x-1 py-[10px] px-[7px] bg-[#F5F5F5] rounded lg:h-[30px] h-full lg:w-[30px] w-full'>
+                          <div className='flex items-center gap-x-1 py-[10px] px-[7px] bg-[#F5F5F5] rounded lg:h-[30px] h-auto lg:w-[30px] w-auto'>
                             <Image src={dropIcon} alt="not found" className='w-[9px] h-[10px]'/>
                             <Image src={droparrow} alt="not found" className='w-[6px] h-[3px]'/>
                           </div>
-                          <input placeholder='Type Your Price ' className=' pl-[10px] bg-[#F5F5F5]  w-full placeholder:text-xs rounded'/>
-                          <div className=' bg-[#F5F5F5] py-[10px] px-[13px] rounded lg:h-[30px] h-full lg:w-[30px] w-full'>1</div>
+                          <input placeholder='Type Your Price ' className=' lg:pl-[10px] bg-[#F5F5F5]  w-full placeholder:text-xs rounded'/>
+                          <div className=' bg-[#F5F5F5] py-[10px] px-[13px] rounded lg:h-[30px] h-auto lg:w-[30px] w-auto'>1</div>
                         </div>
                           <div>
                               <p className='font-medium mb-[10px]'> Sell Price</p>
@@ -256,11 +256,11 @@ export default function ProductDetails() {
                         
                     </div>
                   <div className="bg-white rounded  lg:w-[799px] w-full lg:h-[326px] h-full pb-15 lg:pb-0 ">
-  <h2 className=" lg:pt-[19px] pl-[16px] text-base">Keepa</h2>
-  <p className="text-[#FF9900] lg:pt-[14px] lg:pb-[5px] pl-[23px] font-semibold text-lg">Keepa Graph</p>
+  <h2 className=" lg:pt-[19px] pt-2 pl-[16px] text-base">Keepa</h2>
+  <p className="text-[#FF9900] lg:pt-[14px] pt-2 lg:pb-[5px] pl-[23px] font-semibold text-lg">Keepa Graph</p>
 
-  <div className="px-[16px]  h-[192px] w-[630px]">
-    <p className=' text-sm ml-2'>LEGO 60226 CITY MARS RESEARCH SHUTTLE SPACESHIP CONSTRUCTION TOYS FOR..</p>
+  <div className="px-[16px]  h-[192px] md:w-[630px] w-full">
+    <p className=' text-sm ml-2 mt-2 md:mt-0'>LEGO 60226 CITY MARS RESEARCH SHUTTLE SPACESHIP CONSTRUCTION TOYS FOR..</p>
     <Line
       data={config.data}
       options={{
@@ -272,7 +272,7 @@ export default function ProductDetails() {
     />
   </div>
 
-  <div className='flex items-end mt-5 lg:mt-0 lg:justify-end justify-center gap-x-[11px] px-[16px] '>
+  <div className='flex items-end mt-20 md:mt-0 lg:justify-end justify-center gap-x-[11px] px-[16px] '>
     <Image src={keepa} alt='not found'/><span>Keepa</span>
     </div>
 </div>
@@ -282,14 +282,14 @@ export default function ProductDetails() {
                           <div className='flex items-center gap-x-[18px] mt-3 lg:mt-[30px] gap-y-2 lg:gap-y-0 lg:flex-row flex-col'>
                           <div className='bg-white rounded  h-[343px]  lg:w-[609px] w-full'>
                             <h2 className={`${montserrat.className} pt-[19px] pl-[14px] text-xs font-semibold`}>EU Chart</h2>
-                            <div className=' pt-[16px] pr-[12px]  flex gap-x-3 items-baseline  justify-end'>
-                              <p className={`pt-[19px] pl-[14px] text-xs font-medium ${montserrat.className}`}>ROI%</p>
-                              <input className={`bg-[#F5F5F5] text-xs text-black ${montserrat.className} font-semibold py-[7px] pl-[11px]`} placeholder=''  />
+                            <div className=' pt-[16px] lg:pr-[12px] px-3  flex lg:flex-row flex-col gap-y-2 lg:gap-y-0  gap-x-3 items-baseline  justify-end '>
+                              <p className={`pt-[19px] lg:pl-[14px] text-xs font-medium ${montserrat.className}`}>ROI%</p>
+                              <input className={`bg-[#F5F5F5] text-xs  lg:w-[165px] w-full lg:h-[30px] h-auto text-black ${montserrat.className} font-semibold py-[7px] pl-[11px]`} placeholder=''  />
                              <p className={`${poppins.className} font-normal text-xs`}>Buy Price: 30.20</p>
                             </div>
                           <div className="mt-[13px] mx-[10px] border border-white shadow-md rounded-b ">
   
-  <div className={`flex pl-[22px] text-xs pr-[10px] py-[10px] font-semibold border border-[#CFCFCF] rounded-t bg-[#F8F8F8]  ${montserrat.className}`}>
+  <div className={`flex pl-[22px] md:text-xs text-[9px] lg:pr-[10px] lg:py-[10px] gap-x-1 md:gap-x-0  md:text-xs text-[9px] font-semibold border border-[#CFCFCF] rounded-t bg-[#F8F8F8]  ${montserrat.className}`}>
     <div className="flex-1 text-left">REGION</div>
     <div className="flex-1 text-center">RANK</div>
     <div className="flex-1 text-center">PRICE</div>
@@ -299,14 +299,14 @@ export default function ProductDetails() {
 
  
   {EUdata.map((item, i) => (
-    <div key={i} className="flex pl-[22px] pr-[10px] py-2 hover:bg-[#F8F8F8] ">
-      <div className="flex-1 text-left">
+    <div key={i} className="flex lg:pl-[22px] lg:pr-[10px] py-2 hover:bg-[#F8F8F8] md:text-base text-xs ">
+      <div className="flex-1 text-left pl-5 md:pl-0 ">
         <Image src={item.region} alt="flag" />
       </div>
-      <div className="flex-1 text-center font-semibold text-xs ">{item.rank}</div>
-      <div className="flex-1 text-center font-semibold text-xs">{item.price}</div>
-      <div className="flex-1 text-center font-semibold text-xs">{item.profit}</div>
-      <div className="flex-1 text-center font-semibold text-xs text-[#1BB65D]">{item.roi}</div>
+      <div className="flex-1 text-center font-semibol">{item.rank}</div>
+      <div className="flex-1 text-center font-semibol">{item.price}</div>
+      <div className="flex-1 text-center font-semibol">{item.profit}</div>
+      <div className="flex-1 text-center font-semibol text-[#1BB65D]">{item.roi}</div>
     </div>
   ))}
 </div>

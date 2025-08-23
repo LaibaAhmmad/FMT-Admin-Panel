@@ -42,12 +42,12 @@ export default function Devices() {
 
 <div className='flex justify-center items-center'>
 <div className=' max-w-[709px] w-full  mt-[12px]'>
-    <div  className={`${montserrat.className} flex justify-between bg-[#F8F8F8] pl-[46px] pt-[19px] pb-[16px] font-semibold text-xs`}>
+    <div  className={`${montserrat.className} flex justify-between bg-[#F8F8F8] lg:pl-[46px] px-2 pt-[19px] pb-[16px] font-semibold text-xs`}>
     <p >DEVICES</p>
     <p >IP LOCATION</p>
-    <p className='text-center pr-[20px]'>LAST ACTIVE</p>
+    <p className='text-center lg:pr-[20px]'>LAST ACTIVE</p>
     </div>
-    <div  className={`${montserrat.className} bg-[#FFFFFF] flex justify-between md:items-center items-baseline  text-left px-[40px] pb-[16px] md:text-sm text-xs text-[#6C6A72] text-[min(2vw,1rem)]`} >
+    <div  className={`${montserrat.className} bg-[#FFFFFF] flex justify-between lg:items-center items-baseline px-2  text-left lg:px-[40px] pb-[16px] md:text-sm text-xs text-[#6C6A72] text-[min(2vw,1rem)]`} >
         <ul className='' >
             <li className='flex gap-x-1 pt-[28px] '>
               <Image src={star} alt="notfound "/> <span>Device 1</span>
@@ -96,7 +96,7 @@ export default function Devices() {
         </ul>
        
     </div>
-     <div className='flex justify-between text-xs mt-[9px] mb-5'>
+     <div className='flex lg:flex-row flex-col justify-between text-xs mt-[9px] mb-5'>
             <span className='text-[#9E9E9E]'>Showing 4 to 4 of 4 Entries</span>
             <div className='rounded border-[#D8D6DE] border-[1px] text-[#909090] bg-white pl-[16px] pr-[3px] py-[4px] mb-4 md:mb-0 '>
                <button className='py-[3px] text-center'> 

@@ -51,7 +51,7 @@ export default function Monitoring() {
 <div className=''>
 <div className="overflow-x-auto shadow-lg shadow-black/5">
   <div
-    className={`flex ${montserrat.className} flex-row justify-between text-sm font-semibold bg-[#F8F8F8] pr-[58px] pl-[60px] pt-[20px] pb-[15px] mt-[15px] min-w-[900px]`}
+    className={`flex ${montserrat.className} flex-row justify-between text-sm font-semibold bg-[#F8F8F8] pr-[58px] lg:pl-[60px] pt-[20px] pb-[15px] mt-[15px] min-w-[900px]`}
   >
     <div
       className="w-1/6 text-center font-semibold text-sm "
@@ -71,9 +71,9 @@ export default function Monitoring() {
   {productdata.map((e, index) => (
     <div
       key={index}
-      className={`${montserrat.className} pt-[31px] pb-[25px] pl-[60px] pr-[58px] flex flex-row justify-between items-center bg-[#ffffff] text-xs md:text-sm gap-x-5 md:gap-x-0 text-[min(2vw,1rem)] min-w-[900px]`}
+      className={`${montserrat.className} pt-[31px] pb-[25px] lg:pl-[60px] pr-[58px] flex flex-row justify-between items-center bg-[#ffffff] text-xs md:text-sm gap-x-5 md:gap-x-0 text-[min(2vw,1rem)] min-w-[900px]`}
     >
-      <div className="w-1/6 text-center text-[#6E6B7B] lg:text-lg font-semibold flex gap-2">
+      <div className="w-1/6 text-center flex items-center text-[#6E6B7B] lg:text-lg font-semibold flex gap-2">
         <Image src={box} alt="not found" />
         {e.User}
       </div>
@@ -88,7 +88,7 @@ export default function Monitoring() {
       </div>
 
       <div className="w-1/8 text-center text-[#6E6B7B]">
-        <select className="border border-[#D8D6DE] outline-0 rounded md:w-[130px] w-full md:h-[35px] h-auto">
+        <select className="border border-[#D8D6DE] outline-0 rounded md:w-[130px] w-auto md:h-[35px] h-auto">
           <option>Wage p/h</option>
           <option>2.30</option>
           <option>2.30</option>
@@ -100,7 +100,7 @@ export default function Monitoring() {
       <div className="w-1/6 text-center">
         <button
           className={`
-             cursor-pointer border-1 border-[#FF9900] rounded text-[#FF9900] text-xs ${montserrat.className} md:w-[71px] w-full md:h-[29px] h-auto`}>
+             cursor-pointer border-1 border-[#FF9900] rounded text-[#FF9900] text-xs ${montserrat.className} md:w-[71px] w-auto md:h-[29px] h-auto`}>
           VIEW
         </button>
       </div>
@@ -122,17 +122,17 @@ export default function Monitoring() {
 </div>
 
 </div>
-  <div className='flex justify-between text-sm mt-[9px]'>
-            <span className='text-[#9E9E9E]'>Showing 4 of 4 Entries</span>
-            <div className='rounded border-[#D8D6DE] border-[1px] text-[#909090] bg-white pl-[16px] pr-[3px] py-[4px] mb-4 md:mb-0 '>
-                          <button className='py-[3px] text-center'> 
-                           Previous <span className={`${montserrat.className} bg-[#ff9900] text-white px-[12px] py-[7.5px] my-0 `}>1</span>
-                          </button>
-                            <button className={`${poppins} text-center py-[3px] pr-[13px] pl-[12px] `}>
-                           Next
-                          </button>
-                       </div>
-        </div>
+     <div className='flex lg:flex-row flex-col justify-between text-xs mt-[9px] mb-5'>
+             <span className='text-[#9E9E9E] text-center md:text-start'>Showing 4 to 4 of 4 Entries</span>
+             <div className='rounded border-[#D8D6DE] border-[1px] text-[#909090] bg-white pl-[16px] pr-[3px] py-[4px] mb-4 md:mb-0 flex items-center justify-center md:justify-start md:items-start'>
+                <button className='py-[3px] text-center'> 
+                 Previous <span className={`${montserrat.className} bg-[#ff9900] text-white px-[12px] py-[7.5px] my-0 `}>1</span>
+                </button>
+                  <button className={`${poppins} text-center py-[3px] pr-[13px] pl-[12px] `}>
+                 Next
+                </button>
+             </div>
+         </div>
                          </div>
                          </div>
     </div>

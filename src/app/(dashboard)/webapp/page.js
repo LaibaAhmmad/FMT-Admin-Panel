@@ -123,17 +123,16 @@ export default function WebApp() {
   ))}
 </div>
 
-
-  <div className='flex justify-between text-sm mt-[9px]'>
-            <span className='text-[#9E9E9E]'>Showing 4 of 4 Entries</span>
-            <div className='rounded border-[#D8D6DE] border-[1px] text-[#909090] bg-white pl-[16px] pr-[3px] py-[4px] mb-4 md:mb-0 '>
-                          <button className='py-[3px] text-center'> 
-                           Previous <span className={`${montserrat.className} bg-[#ff9900] text-white px-[12px] py-[7.5px] my-0 `}>1</span>
-                          </button>
-                            <button className={`${poppins} text-center py-[3px] pr-[13px] pl-[12px] `}>
-                           Next
-                          </button>
-                       </div>
+    <div className='flex lg:flex-row flex-col justify-between text-xs mt-[9px] mb-5'>
+            <span className='text-[#9E9E9E] text-center md:text-start'>Showing 4 to 4 of 4 Entries</span>
+            <div className='rounded border-[#D8D6DE] border-[1px] text-[#909090] bg-white pl-[16px] pr-[3px] py-[4px] mb-4 md:mb-0 flex items-center justify-center md:justify-start md:items-start'>
+               <button className='py-[3px] text-center'> 
+                Previous <span className={`${montserrat.className} bg-[#ff9900] text-white px-[12px] py-[7.5px] my-0 `}>1</span>
+               </button>
+                 <button className={`${poppins} text-center py-[3px] pr-[13px] pl-[12px] `}>
+                Next
+               </button>
+            </div>
         </div>
         </div>
     </div> 
