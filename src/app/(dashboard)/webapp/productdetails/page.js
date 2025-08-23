@@ -212,12 +212,12 @@ export default function ProductDetails() {
                       <p> Qty</p>
                        </div>
                         <div className='flex gap-x-2  mt-[15px] pb-[15px]'>
-                          <div className='flex items-center gap-x-1 py-[10px] px-[7px] bg-[#F5F5F5] rounded  '>
+                          <div className='flex items-center gap-x-1 py-[10px] px-[7px] bg-[#F5F5F5] rounded lg:h-[30px] h-full lg:w-[30px] w-full'>
                             <Image src={dropIcon} alt="not found" className='w-[9px] h-[10px]'/>
                             <Image src={droparrow} alt="not found" className='w-[6px] h-[3px]'/>
                           </div>
-                          <input placeholder='Type Your Price ' className=' pl-[10px] gbg-[#F5F5F5]  w-full placeholder:text-xs rounded'/>
-                          <div className=' bg-[#F5F5F5] py-[10px] px-[13px] rounded'>1</div>
+                          <input placeholder='Type Your Price ' className=' pl-[10px] bg-[#F5F5F5]  w-full placeholder:text-xs rounded'/>
+                          <div className=' bg-[#F5F5F5] py-[10px] px-[13px] rounded lg:h-[30px] h-full lg:w-[30px] w-full'>1</div>
                         </div>
                           <div>
                               <p className='font-medium mb-[10px]'> Sell Price</p>
