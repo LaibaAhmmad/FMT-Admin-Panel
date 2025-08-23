@@ -216,7 +216,7 @@ export default function ProductDetails() {
                             <Image src={dropIcon} alt="not found" className='w-[9px] h-[10px]'/>
                             <Image src={droparrow} alt="not found" className='w-[6px] h-[3px]'/>
                           </div>
-                          <input placeholder='Type Your Price ' className=' pl-[10px] bg-[#F5F5F5]  w-full placeholder:text-xs rounded'/>
+                          <input placeholder='Type Your Price ' className=' pl-[10px] gbg-[#F5F5F5]  w-full placeholder:text-xs rounded'/>
                           <div className=' bg-[#F5F5F5] py-[10px] px-[13px] rounded'>1</div>
                         </div>
                           <div>
@@ -314,7 +314,7 @@ export default function ProductDetails() {
                           <div className='bg-white rounded  lg:w-[503px] w-full h-[343px] px-[14px]'>
                             <h2 className={`${montserrat.className} text-[#2F2F2F] font-semibold pt-[19px] pb-[35px] `}>News & Updates</h2>
                             <h2 className={`${poppins.className} text-[#FF9900] font-semibold text-lg pb-[11px]`}>Update Name</h2>
-                           <p className={`${poppins.className} text-[#9A9A9A] text-sm font-normal`}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                           <p className={`${poppins.className} text-[#9A9A9A] text-sm font-normal`}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,</p>
                           </div>
                          </div>
              </div>
