@@ -73,8 +73,8 @@ export default function Plans() {
   </div>
   <div className={`${poppins.className} flex flex-col gap-y-[16px]  pl-[24px] pr-[26px] pt-[26px]`}>
     <div className=' flex  gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal text-[#2F2F2F]'>Up to 500 orders</p></div>
-    <div className=' flex  gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinite ASIN'S</p></div>
-     <div className=' flex  gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinte SKU’s</p></div>
+    <div className=' flex  gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinite ASIN&apos;S</p></div>
+     <div className=' flex  gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinte SKU&apos;s</p></div>
      <div className=' flex  gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Infinite marketplaces</p></div>
   </div>
   <div className=' pl-[24px] pr-[26px] pt-[39px]'>
@@ -92,8 +92,8 @@ export default function Plans() {
   </div>
   <div className={`${poppins} flex flex-col gap-y-[16px] pl-[24px] pr-[26px]  pt-[26px]`}>
     <div className=' flex  gap-x-1'><Image src={vectorfilled} alt=" not found"/><p className='text-sm font-normal text-[#2F2F2F]'>Up to 500 orders</p></div>
-    <div className=' flex  gap-x-1'><Image src={vectorfilled} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinite ASIN'S</p></div>
-     <div className=' flex  gap-x-1'><Image src={vectorfilled} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinte SKU’s</p></div>
+    <div className=' flex  gap-x-1'><Image src={vectorfilled} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinite ASIN&apos;S</p></div>
+     <div className=' flex  gap-x-1'><Image src={vectorfilled} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinte SKU&apos;s</p></div>
      <div className=' flex  gap-x-1'><Image src={vectorfilled} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Infinite marketplaces</p></div>
   </div>
   <div className=' pl-[24px] pr-[26px]  pt-[39px]'>
@@ -108,8 +108,8 @@ export default function Plans() {
   </div>
   <div className={`${poppins} flex flex-col gap-y-[16px]  pl-[24px] pr-[26px]  pt-[26px]`}>
     <div className='flex gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal text-[#2F2F2F]'>Up to 500 orders</p></div>
-    <div className='flex  gap-x-1 '><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinite ASIN'S</p></div>
-     <div className='flex  gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinte SKU’s</p></div>
+    <div className='flex  gap-x-1 '><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinite ASIN&apos;S</p></div>
+     <div className='flex  gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Up to infinte SKU&apos;s</p></div>
      <div className='flex  gap-x-1'><Image src={vector} alt=" not found"/><p className='text-sm font-normal  text-[#2F2F2F]'>Infinite marketplaces</p></div>
   </div>
   <div className=' pl-[24px] pr-[26px] pt-[39px] '>
