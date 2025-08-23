@@ -88,7 +88,7 @@ export default function Monitoring() {
       </div>
 
       <div className="w-1/8 text-center text-[#6E6B7B]">
-        <select className="border border-[#D8D6DE] outline-0 rounded py-[8px] md:w-[130px] w-full md:h-[35px] h-auto">
+        <select className="border border-[#D8D6DE] outline-0 rounded md:w-[130px] w-full md:h-[35px] h-auto">
           <option>Wage p/h</option>
           <option>2.30</option>
           <option>2.30</option>

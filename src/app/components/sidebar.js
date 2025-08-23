@@ -9,14 +9,14 @@ import HomeIcon from "@/app/assets/home.svg"
 import { Montserrat} from "next/font/google";
 import { redirect } from 'next/navigation'
 import { useState } from 'react'
-import { useSidebar } from '../sidebarContext'
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["100","200",'300', "400", "500" ,"600","700"], 
 });
 
  export default function Sidebar() {
-  const {} = useSidebar();
+  
   const [isOpen, setIsOpen] = useState()
   return (
 

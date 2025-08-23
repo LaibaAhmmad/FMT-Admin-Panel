@@ -12,7 +12,7 @@ import { redirect } from 'next/navigation'
 
 import Image from 'next/image'
 import { Montserrat} from "next/font/google";
-import { useSidebar } from "@/app/sidebarContext"
+
 import { Poppins } from "next/font/google";
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -24,7 +24,7 @@ export const poppins = Poppins({
   weight: ["400",'100','200','300' ,"500", "700",'600'], 
 });
 export default function Navbar({heading}) {
-  const { isOpen ,setIsOpen } = useSidebar();
+
   const [openDropdown , setopenDropdown] = useState();
   return (
     <div className='flex justify-between p-3 border-b border-[#D3D3D3]'>

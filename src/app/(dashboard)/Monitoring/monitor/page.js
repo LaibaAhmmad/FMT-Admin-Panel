@@ -21,8 +21,8 @@ export const poppins = Poppins({
 });
 export default function Monitor() {
   return (
-    <div className='bg-[#EDEDED] pb-7 w-full'>
-       <div className="flex-1 ml-15 md:ml-0 overflow-x-hidden ">
+    <div className='bg-[#EDEDED] pb-7 w-full overflow-x-hidden'>
+       <div className="flex-1 ml-15 md:ml-0  ">
           <Navbar heading='VA Monitoring'/>
                        
                        <div className=' mt-[30px]  mx-[33px]'>

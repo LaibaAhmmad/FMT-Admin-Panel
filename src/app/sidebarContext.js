@@ -17,6 +17,3 @@ export function SidebarProvider({ children }) {
 }
 
 
-export function useSidebar() {
-  return useContext(SidebarContext);
-}
