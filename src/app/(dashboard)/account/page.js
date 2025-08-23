@@ -21,7 +21,7 @@ export default function Account() {
     <div className='bg-[#EDEDED] pb-7 w-full overflow-x-hidden'>
         <div className="flex-1 ml-15 md:ml-0  ">
         <Navbar heading="Account"/>
-          <div className=' mt-[30px] mx-[33px] '>
+          <div className=' mt-[30px] mx-[33px]'>
             <div className='flex lg:flex-row flex-col gap-x-[22px] gap-y-3 lg:gap-y-0'>
             <div className='bg-white rounded   lg:w-[426px] w-full md:h-[386px] h-full px-[16px]  pb-2 lg:pb-0'> 
                 <h1 className={`${montserrat.className} text-lg font-semibold text-[#2F2F2F] mt-[22px]`}>Change Password</h1>
@@ -44,7 +44,7 @@ export default function Account() {
                 <button className={`text-[#FF9900] bg-[#FFDAB97D]  text-sm md:text-[15px] mt-[22px] rounded py-2 md:py-[7px] px-[21px]`} onClick={()=>{ redirect('/account/cardDetails')} } >Change Payment Details</button>
             </div>
              </div>
- <div className='bg-white rounded lg:mt-[27px] mt-3 lg:w-[1127px] w-full overflow-x-auto'>
+ <div className='bg-white rounded lg:mt-[27px] mt-3 lg:max-w-[1127px] w-full overflow-x-auto'>
     <h1 className={`text-lg font-semibold text-[#2F2F2F] ${montserrat.className} pt-[21px] mb-[15px] ml-[25px]`}>Subscription</h1>
    <div className=" pl-[25px] pr-[33px]  py-[15px] min-w-[900px]">
   <div
