@@ -26,10 +26,8 @@ export default function RootLayout({ children }) {
       <body >
       <SidebarProvider>
       <div className={`${poppins.className} flex  bg-[#EDEDED] ` } >
-         <Sidebar />
-    
+         <Sidebar />  
 {children}
-        
       </div>
       </SidebarProvider>
       </body>

@@ -7,6 +7,7 @@ import pp from '@/app/assets/pp.svg'
 import logout from '@/app/assets/logout.svg'
 import settings2 from '@/app/assets/settings2.svg'
 import paper from '@/app/assets/paper.svg'
+import { useSidebar } from '@/app/sidebarContext.js'
 
 import { redirect } from 'next/navigation'
 
@@ -24,12 +25,12 @@ export const poppins = Poppins({
   weight: ["400",'100','200','300' ,"500", "700",'600'], 
 });
 export default function Navbar({heading}) {
-
+  const { isOpen, setIsOpen } = useSidebar();
   const [openDropdown , setopenDropdown] = useState();
   return (
     <div className='flex justify-between p-3 border-b border-[#D3D3D3]'>
             <div className='flex items-center md:gap-x-3 gap-x-1'>
-  <Image src={menuIcon} alt='notfound' onClick={ () => setIsOpen(!isOpen)} className='cursor-pointer'/>
+  <Image src={menuIcon} alt='notfound' onClick={ () => {setIsOpen(!isOpen)} } className='cursor-pointer'/>
   <h1 className='font-semibold text-2xl text-[min(3vw,1.5rem)]' >{heading}</h1>
 </div>
 <div className='flex  gap-x-2 md:gap-x-[31px] items-center'>
