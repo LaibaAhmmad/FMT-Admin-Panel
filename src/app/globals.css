@@ -1,3 +1,10 @@
 @import "tailwindcss";
 
-
+table.dataTable,
+.dataTables_wrapper {
+  border: none !important;
+  outline: none !important;
+}
+*:focus {
+  outline: none !important;
+}

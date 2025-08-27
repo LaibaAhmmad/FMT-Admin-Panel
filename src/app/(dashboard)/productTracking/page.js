@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "@/app/components/navbar";
 import productdata from "@/app/productdata.json";
 import Image from "next/image";
@@ -17,81 +17,96 @@ export const poppins = Poppins({
   weight: ["400", "100", "200", "300", "500", "700", "600"],
 });
 
-import $ from "jquery";
-import "datatables.net-dt";
-
 export default function ProductTracking() {
   const tableRef = useRef(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    
-    const initialLen = Number(document.getElementById("entriesSelect")?.value) || 10;
-
-    const table = $(tableRef.current).DataTable({
-      paging: true,
-      searching: true,
-      ordering: true,
-      info: false,
-      pageLength: initialLen,
-      lengthChange: false, 
-      dom: "t", 
-    });
-
-   
-    $("#productSearch").on("keyup", function () {
-      table.search(this.value).draw();
-    });
-
-   
-    $("#entriesSelect").on("change", function () {
-      const len = Number(this.value) || 10;
-      table.page.len(len).draw();
-    });
-
-   
-    function renderPagination() {
-      const info = table.page.info();
-      let html = "";
-
-      html += `<button id="prevPage" class="px-3 py-1 ${info.page === 0 ? "opacity-50 pointer-events-none" : ""}">Previous</button>`;
-
-      for (let i = 0; i < info.pages; i++) {
-        html += `<button class="px-3 py-1 mx-1 rounded ${i === info.page ? "bg-[#ff9900] text-white" : "text-[#909090]"}">${i + 1}</button>`;
-      }
-
-      html += `<button id="nextPage" class="px-3 py-1 ${info.page === info.pages - 1 ? "opacity-50 pointer-events-none" : ""}">Next</button>`;
-
-      $("#productPagination").html(html);
-
-      // Event bindings
-      $("#prevPage").on("click", () => {
-        if (info.page > 0) table.page(info.page - 1).draw("page");
-      });
-      $("#nextPage").on("click", () => {
-        if (info.page < info.pages - 1) table.page(info.page + 1).draw("page");
-      });
-
-      $("#productPagination button").each(function (i) {
-        if (!$(this).attr("id")) {
-          $(this).on("click", () => table.page(i - 1).draw("page"));
-        }
-      });
-
-      // Showing info
-      const start = info.recordsDisplay === 0 ? 0 : info.start + 1;
-      const end = info.recordsDisplay === 0 ? 0 : info.end;
-      $("#productInfo").text(`Showing ${start} to ${end} of ${info.recordsDisplay} Entries`);
-    }
-
-    renderPagination();
-    table.on("draw", renderPagination);
-
-    return () => {
-      table.destroy();
-    };
+    setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    if (!isClient || typeof window === "undefined") return;
+
+    const initializeDataTable = async () => {
+      try {
+        // Dynamically import jQuery and DataTables
+        const $ = (await import("jquery")).default;
+        await import("datatables.net-dt");
+        
+        const initialLen = Number(document.getElementById("entriesSelect")?.value) || 10;
+
+        const table = $(tableRef.current).DataTable({
+          paging: true,
+          searching: true,
+          ordering: true,
+          info: false,
+          pageLength: initialLen,
+          lengthChange: false, 
+          dom: "t", 
+        });
+
+        // Search functionality
+        $("#productSearch").on("keyup", function () {
+          table.search(this.value).draw();
+        });
+
+        // Entries select functionality
+        $("#entriesSelect").on("change", function () {
+          const len = Number(this.value) || 10;
+          table.page.len(len).draw();
+        });
+
+        // Pagination rendering
+        function renderPagination() {
+          const info = table.page.info();
+          let html = "";
+
+          html += `<button id="prevPage" class="px-3 py-1 ${info.page === 0 ? "opacity-50 pointer-events-none" : ""}">Previous</button>`;
+
+          for (let i = 0; i < info.pages; i++) {
+            html += `<button class="px-3 py-1 mx-1 rounded ${i === info.page ? "bg-[#ff9900] text-white" : "text-[#909090]"}">${i + 1}</button>`;
+          }
+
+          html += `<button id="nextPage" class="px-3 py-1 ${info.page === info.pages - 1 ? "opacity-50 pointer-events-none" : ""}">Next</button>`;
+
+          $("#productPagination").html(html);
+
+          // Event bindings
+          $("#prevPage").on("click", () => {
+            if (info.page > 0) table.page(info.page - 1).draw("page");
+          });
+          $("#nextPage").on("click", () => {
+            if (info.page < info.pages - 1) table.page(info.page + 1).draw("page");
+          });
+
+          $("#productPagination button").each(function (i) {
+            if (!$(this).attr("id")) {
+              $(this).on("click", () => table.page(i - 1).draw("page"));
+            }
+          });
+
+          // Showing info
+          const start = info.recordsDisplay === 0 ? 0 : info.start + 1;
+          const end = info.recordsDisplay === 0 ? 0 : info.end;
+          $("#productInfo").text(`Showing ${start} to ${end} of ${info.recordsDisplay} Entries`);
+        }
+
+        renderPagination();
+        table.on("draw", renderPagination);
+
+        return () => {
+          if (table) {
+            table.destroy(true);
+          }
+        };
+      } catch (error) {
+        console.error("Error initializing DataTable:", error);
+      }
+    };
+
+    initializeDataTable();
+  }, [isClient]);
 
   return (
     <div className="bg-[#EDEDED] pb-7 w-full h-screen overflow-x-hidden">

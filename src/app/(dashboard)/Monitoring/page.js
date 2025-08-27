@@ -27,71 +27,75 @@ export const poppins = Poppins({
 export default function Monitoring() {
   const tableRef = useRef(null)
 
-  useEffect(() => {
-    let table;
+useEffect(() => {
+  let table;
 
-    const loadDataTables = async () => {
-      if (typeof window !== "undefined") {
-        const $ = (await import("jquery")).default;
-        await import("datatables.net-dt");
+  const loadDataTables = async () => {
+    if (typeof window !== "undefined") {
+      const $ = (await import("jquery")).default;
+      await import("datatables.net-dt");
 
-        table = $(tableRef.current).DataTable({
-          paging: true,
-          searching: true,
-          pagingType: "full_numbers",
-          pageLength: 4,
-          lengthChange: false,
-          info: false,
-          dom: 't',
-        });
+      // 🚀 Prevent DataTables from throwing alerts
+      $.fn.dataTable.ext.errMode = "none";
 
-        $('#monitoringSearch').on('keyup', function () {
-          table.search(this.value).draw();
-        });
+      table = $(tableRef.current).DataTable({
+        paging: true,
+        searching: true,
+        pagingType: "full_numbers",
+        pageLength: 4,
+        lengthChange: false,
+        info: false,
+        dom: "t",
+      });
 
-        function renderPagination() {
-          let pageInfo = table.page.info();
+      $('#monitoringSearch').on('keyup', function () {
+        table.search(this.value).draw();
+      });
 
-          $('#monitoringInfo').text(
-            `Showing ${pageInfo.recordsDisplay === 0 ? 0 : pageInfo.start + 1} to ${pageInfo.end} of ${pageInfo.recordsDisplay} entries`
-          );
+      function renderPagination() {
+        let pageInfo = table.page.info();
 
-          let pages = '';
-          for (let i = 0; i < pageInfo.pages; i++) {
-            pages += `<button class="${i === pageInfo.page ? 'bg-[#ff9900] text-white' : 'text-[#909090]'} px-3 py-[7.5px] mx-1 rounded">${i + 1}</button>`;
-          }
-          $('#monitoringPagination').html(`
-            <button id="prevPage" class="px-3 py-1 ${pageInfo.page === 0 ? 'opacity-50' : ''}">Previous</button>
-            ${pages}
-            <button id="nextPage" class="px-3 py-1 ${pageInfo.page === pageInfo.pages - 1 ? 'opacity-50' : ''}">Next</button>
-          `);
+        $('#monitoringInfo').text(
+          `Showing ${pageInfo.recordsDisplay === 0 ? 0 : pageInfo.start + 1} to ${pageInfo.end} of ${pageInfo.recordsDisplay} entries`
+        );
 
-          $('#prevPage').on('click', () => {
-            if (pageInfo.page > 0) table.page(pageInfo.page - 1).draw('page');
-          });
-          $('#nextPage').on('click', () => {
-            if (pageInfo.page < pageInfo.pages - 1) table.page(pageInfo.page + 1).draw('page');
-          });
-          $('#monitoringPagination button').each(function (i) {
-            if (!$(this).attr('id')) {
-              $(this).on('click', () => table.page(i - 1).draw('page'));
-            }
-          });
+        let pages = '';
+        for (let i = 0; i < pageInfo.pages; i++) {
+          pages += `<button class="${i === pageInfo.page ? 'bg-[#ff9900] text-white' : 'text-[#909090]'} px-3 py-[7.5px] mx-1 rounded">${i + 1}</button>`;
         }
+        $('#monitoringPagination').html(`
+          <button id="prevPage" class="px-3 py-1 ${pageInfo.page === 0 ? 'opacity-50' : ''}">Previous</button>
+          ${pages}
+          <button id="nextPage" class="px-3 py-1 ${pageInfo.page === pageInfo.pages - 1 ? 'opacity-50' : ''}">Next</button>
+        `);
 
-        renderPagination();
-        table.on('draw', renderPagination);
+        $('#prevPage').on('click', () => {
+          if (pageInfo.page > 0) table.page(pageInfo.page - 1).draw('page');
+        });
+        $('#nextPage').on('click', () => {
+          if (pageInfo.page < pageInfo.pages - 1) table.page(pageInfo.page + 1).draw('page');
+        });
+        $('#monitoringPagination button').each(function (i) {
+          if (!$(this).attr('id')) {
+            $(this).on('click', () => table.page(i - 1).draw('page'));
+          }
+        });
       }
-    };
 
-    loadDataTables();
+      renderPagination();
+      table.on('draw', renderPagination);
+    }
+  };
 
-    return () => {
-      if (table) {
-        table.destroy();
-      }
-    };
-  }, []);
+  loadDataTables();
+
+  return () => {
+    if (table) {
+      table.destroy();
+    }
+  };
+}, []);
+
   return (
     <div className="bg-[#EDEDED] pb-7 h-screen w-full  overflow-x-hidden">
       <div className="flex-1 ml-15 md:ml-0">

@@ -11,9 +11,6 @@ import cross from '@/app/assets/cross.svg'
 import eye from '@/app/assets/eye.svg'
 import Navbar from '@/app/components/navbar';
 import { useEffect, useRef, useState } from 'react';
-import $ from 'jquery';
-
-import 'datatables.net';
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -29,43 +26,84 @@ export default function WebApp() {
   const tableRef = useRef(null);
   const dtRef = useRef(null);
   const [mainSearch, setMainSearch] = useState('');
+  const [isClient, setIsClient] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
   const [pageInfo, setPageInfo] = useState(null);
 
   useEffect(() => {
-    if (tableRef.current) {
-      dtRef.current = $(tableRef.current).DataTable({
-        pageLength: 5,
-        lengthChange: false,
-        searching: true,
-        info: false,
-        paging: true,
-        dom: 't', // hide default pagination
-      });
-
-      // Set initial total pages + info
-      const info = dtRef.current.page.info();
-      setTotalPages(info.pages);
-      setPageInfo(info);
-
-      // Update current page and info on page change
-      dtRef.current.on('draw page', () => {
-        const newInfo = dtRef.current.page.info();
-        setCurrentPage(newInfo.page);
-        setPageInfo(newInfo);
-      });
-    }
-
-    return () => {
-      if (dtRef.current) dtRef.current.destroy();
-    };
+    setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    if (!isClient || !tableRef.current) return;
+
+    const initializeDataTable = async () => {
+      try {
+        // Dynamically import jQuery and DataTables
+        const $ = (await import("jquery")).default;
+        await import("datatables.net");
+        
+        dtRef.current = $(tableRef.current).DataTable({
+          pageLength: 5,
+          lengthChange: false,
+          searching: true,
+          info: false,
+          paging: true,
+          dom: 't', // hide default pagination
+        });
+
+        // Set initial total pages + info
+        const info = dtRef.current.page.info();
+        setTotalPages(info.pages);
+        setPageInfo(info);
+
+        // Update current page and info on page change
+        dtRef.current.on('draw page', () => {
+          const newInfo = dtRef.current.page.info();
+          setCurrentPage(newInfo.page);
+          setPageInfo(newInfo);
+        });
+
+        return () => {
+          if (dtRef.current) dtRef.current.destroy(true);
+        };
+      } catch (error) {
+        console.error("Error initializing DataTable:", error);
+      }
+    };
+
+    initializeDataTable();
+  }, [isClient]);
 
   const handleMainSearch = () => {
     if (dtRef.current) {
       dtRef.current.search(mainSearch).draw();
+    }
+  };
+
+  const handleTableSearch = (e) => {
+    if (dtRef.current) {
+      dtRef.current.search(e.target.value).draw();
+    }
+  };
+
+  const goToPage = (page) => {
+    if (dtRef.current) {
+      dtRef.current.page(page).draw('page');
+    }
+  };
+
+  const goToPreviousPage = () => {
+    if (dtRef.current && currentPage > 0) {
+      dtRef.current.page('previous').draw('page');
+    }
+  };
+
+  const goToNextPage = () => {
+    if (dtRef.current && currentPage < totalPages - 1) {
+      dtRef.current.page('next').draw('page');
     }
   };
 
@@ -102,7 +140,7 @@ export default function WebApp() {
               <h2 className='font-semibold text-xl text-[min(3vw,1.25rem)] '>Recently Viewed</h2>
               <div className="relative w-[250px]">
                 <input
-                  onChange={(e) => dtRef.current.search(e.target.value).draw()}
+                  onChange={handleTableSearch}
                   className={`w-full bg-white border border-[#D8D6DE] outline-0 h-[35px] pl-[35px] rounded ${montserrat.className} placeholder-[#BDBDBD] placeholder:font-semibold placeholder:text-sm`}
                   placeholder="Search"
                 />
@@ -111,7 +149,7 @@ export default function WebApp() {
             </div>
 
             <div className="overflow-x-auto shadow-lg shadow-black/5 mt-[15px]">
-              <table ref={tableRef} className="min-w-[900px] w-full border-collapse display">
+              <table ref={tableRef} className="min-w-[900px] w-full border-collapse">
                 <thead>
                   <tr className="bg-[#F8F8F8] text-sm font-semibold">
                     <th className=" text-center pt-[20px] pb-[15px]">TITLE</th>
@@ -158,7 +196,7 @@ export default function WebApp() {
               <div className="flex gap-2 bg-white border border-[#D8D6DE] py-1">
                 {/* Previous Button */}
                 <button
-                  onClick={() => dtRef.current.page('previous').draw('page')}
+                  onClick={goToPreviousPage}
                   disabled={currentPage === 0}
                   className='px-3 py-1 rounded disabled:opacity-50 '
                 >
@@ -179,7 +217,7 @@ export default function WebApp() {
                       <button
                         key={page}
                         className={`px-3 py-[7.5px] mx-1 rounded  ${currentPage === page ? 'bg-[#ff9900] text-white' : 'opacity-50'}`}
-                        onClick={() => dtRef.current.page(page).draw('page')}
+                        onClick={() => goToPage(page)}
                       >
                         {page + 1}
                       </button>
@@ -189,7 +227,7 @@ export default function WebApp() {
 
                 {/* Next Button */}
                 <button
-                  onClick={() => dtRef.current.page('next').draw('page')}
+                  onClick={goToNextPage}
                   disabled={currentPage === totalPages - 1}
                   className='px-3 py-1 rounded disabled:opacity-50 '
                 >
