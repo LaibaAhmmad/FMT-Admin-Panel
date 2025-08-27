@@ -9,7 +9,7 @@ import HomeIcon from "@/app/assets/home.svg";
 import { Montserrat } from "next/font/google";
 import { redirect } from "next/navigation";
 import { useSidebar } from "@/app/sidebarContext";
-
+import { usePathname } from "next/navigation";
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 
 export default function Sidebar() {
   const { isOpen, setIsOpen } = useSidebar();
-
+ const pathname = usePathname()
   return (
     <>
       
@@ -51,24 +51,34 @@ export default function Sidebar() {
             Upgrade
           </button>
 
-          <div
-            className={`hover:bg-white/20 pl-1 md:pl-[18px] ${
-              isOpen ? "w-[213px]" : "w-10 md:w-15"
-            } h-[40px] mr-[18px] ml-[16px] rounded flex text-white items-center gap-x-[11px] mt-7 cursor-pointer`}
+          <div  className={`pl-1 md:pl-[18px] ${
+        isOpen ? "w-[213px]" : "w-10 md:w-15"
+      } h-[40px] mr-[18px] ml-[16px] rounded flex text-white items-center gap-x-[11px] mt-7 cursor-pointer
+        ${
+          pathname === "/" 
+            ? "bg-white/20" 
+            : "hover:bg-white/20"
+        }
+      `}
+            
             onClick={() => {
               redirect("/");
             }}
           >
             <Image src={HomeIcon} alt="" />
-            <p className={`${isOpen ? "block" : "hidden"} cursor-pointer`}>
+            <p className={`${isOpen ? "block" : "hidden"} cursor-pointer `}>
               Dashboard
             </p>
           </div>
-
+         
           <div
-            className={`hover:bg-white/20 pl-1 md:pl-[18px] ${
+            className={` pl-1 md:pl-[18px] ${
               isOpen ? "w-[213px]" : "w-10 md:w-15"
-            } h-[40px] mr-[18px] ml-[16px] rounded flex text-white items-center gap-x-[11px] mt-7 cursor-pointer`}
+            } h-[40px] mr-[18px] ml-[16px] rounded flex text-white items-center gap-x-[11px] mt-7 cursor-pointer  ${
+          pathname === "/webapp" 
+            ? "bg-white/20" 
+            : "hover:bg-white/20"
+        }`}
             onClick={() => {
               redirect("/webapp");
             }}
@@ -82,7 +92,11 @@ export default function Sidebar() {
           <div
             className={`hover:bg-white/20 pl-1 md:pl-[18px] ${
               isOpen ? "w-[213px]" : "w-10 md:w-15"
-            } h-[40px] mr-[18px] ml-[16px] rounded flex text-white items-center gap-x-[11px] mt-7 cursor-pointer`}
+            } h-[40px] mr-[18px] ml-[16px] rounded flex text-white items-center gap-x-[11px] mt-7 cursor-pointer  ${
+          pathname === "/Monitoring" 
+            ? "bg-white/20" 
+            : "hover:bg-white/20"
+        }`}
             onClick={() => {
               redirect("/Monitoring");
             }}
@@ -94,7 +108,13 @@ export default function Sidebar() {
           <div
             className={`hover:bg-white/20 pl-1 md:pl-[18px] ${
               isOpen ? "w-[213px]" : "w-10 md:w-15"
-            } h-[40px] mr-[18px] ml-[16px] rounded flex text-white items-center gap-x-[11px] mt-7 cursor-pointer`}
+            } h-[40px] mr-[18px] ml-[16px] rounded flex text-white items-center gap-x-[11px] mt-7 cursor-pointer  ${
+          pathname === "/productTracking" 
+            ? "bg-white/20" 
+            : "hover:bg-white/20"
+        }`
+          
+          }
             onClick={() => {
               redirect("/productTracking");
             }}
