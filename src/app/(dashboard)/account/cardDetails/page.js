@@ -24,7 +24,7 @@ export const poppins = Poppins({
 });
 export default function CardDetails() {
   return (
-    <div className='bg-[#EDEDED] pb-7 w-full overflow-x-hidden'>
+    <div className='bg-[#EDEDED] pb-7 h-screen w-full overflow-x-hidden'>
         <div className="flex-1 ml-15 md:ml-0  ">
          <Navbar heading="Credit Card Details"/>
          <div className=' mt-[30px] mx-[33px]'>
