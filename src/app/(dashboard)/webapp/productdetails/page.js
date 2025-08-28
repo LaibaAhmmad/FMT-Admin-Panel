@@ -287,7 +287,7 @@ export default function ProductDetails() {
                               <input className={`bg-[#F5F5F5] text-xs  lg:w-[165px] w-full lg:h-[30px] h-auto text-black ${montserrat.className} font-semibold py-[7px] pl-[11px]`} placeholder=''  />
                              <p className={`${poppins.className} font-normal text-xs`}>Buy Price: 30.20</p>
                             </div>
-                          <div className="mt-[13px] mx-[10px] border border-white shadow-md rounded-b h-[237px]">
+                          <div className="mt-[13px] mx-[10px] border border-white shadow-md rounded-b lg:h-[237px] h-auto">
   
   <div className={`flex pl-[22px] md:text-xs text-[9px] lg:pr-[10px] lg:py-[10px] gap-x-1 md:gap-x-0  md:text-xs text-[9px] font-semibold border border-[#CFCFCF] rounded-t bg-[#F8F8F8]  ${montserrat.className}`}>
     <div className="flex-1 text-left">REGION</div>
