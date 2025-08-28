@@ -142,14 +142,14 @@ export default function ProductDetails() {
                <div className="flex-1 ml-15 md:ml-0  ">
           <Navbar heading="Web App"/>
              
-             <div className=' mt-[30px] mx-[33px] '>
+             <div className='  mt-[30px] mx-[33px] '>
                 
                 <div className='flex items-center gap-x-1 '>
                 <div className='bg-[#FF990042] rounded py-[7px] px-[10px]'><Image src={arrow} alt='not found'/></div>
                 <h1 className={`text-xl font-semibold text-[#2F2F2F] text-[min(3vw,1.25rem)] ${poppins.className}`}>Product Details</h1>
                 </div>
                 <div className='flex lg:flex-row flex-col lg:gap-x-[15px] gap-x-2 mt-[21px] gap-y-3 lg:gap-y-0 '>
-                    <div className='bg-white rounded lg:w-[472px] w-full lg:h-[326px] h-full pr-[12px] pb-3 lg:pb-0'>
+                    <div className='bg-white rounded flex-[1_1_472px]  lg:h-[326px] h-full pr-[12px] pb-3 lg:pb-0'>
                       <h2 className={`font-semibold lg:text-base text-sm ${montserrat.className} text-[#2F2F2F] pt-[14px] pl-[14px] `}>Product Information</h2>
                       <div className={` ${poppins.className} flex justify-center  flex-col lg:flex-row w-full px-3 lg:px-0  pt-[13px] gap-x-[19px] `}>
                       <div  className='lg:w-1/2 w-full '>
@@ -167,7 +167,7 @@ export default function ProductDetails() {
                         </div>
                         </div>
                     </div>
-                    <div className='bg-white rounded lg:w-[314px] w-full px-3 lg:px-[13px] lg:h-[326px] h-full '>
+                    <div className='bg-white rounded flex-[1_1_314px] w-full  px-3 lg:px-[13px] lg:h-[326px] h-full '>
                <h2 className={`font-semibold lg:text-base text-sm ${montserrat.className} text-[#2F2F2F] my-[15px] `}>Restrictions</h2>
                          <div className='mt-[16px]' >
                             <ul className={`border-[#E0E0E0] border-1  rounded text-[13px] text-[min(2vw,0.8125rem)] mb-[28px] ${poppins.className}`}>
@@ -194,7 +194,7 @@ export default function ProductDetails() {
                             </ul>
                          </div>
                     </div>
-                    <div className={`bg-white rounded   w-full px-[12px] lg:h-[326px] h-full pb-2 lg:pb-0  lg:w-[314px] `}>
+                    <div className={`bg-white rounded  flex-[1_1_314px] w-full px-[12px] lg:h-[326px] h-full pb-2 lg:pb-0  lg:w-[314px] `}>
                       <div className='flex justify-between'>
                          <h2 className={`font-semibold text-base ${montserrat.className} text-[#2F2F2F] pt-[12px] `}>FBA Calculator</h2>
                          <Image src={settings} alt='not found'/>
@@ -227,7 +227,7 @@ export default function ProductDetails() {
                     </div>
                 </div>
                 <div className='flex   lg:flex-row flex-col gap-x-[17px] mt-3 lg:mt-[30px] lg:gap-y-0 gap-y-3'>
-                   <div className='bg-white rounded  lg:w-[314px] w-full  lg:h-[326px] h-full pb-3 lg:pb-0'>
+                   <div className='bg-white rounded flex-[1_1_314px] w-full  lg:h-[326px] h-full pb-3 lg:pb-0'>
                          <h2 className={`font-semibold text-base ${montserrat.className} text-[#2F2F2F] py-[14px] pl-[14px]`}>Ranking & Pricing</h2>
                          <div >
                             <ul className={`border-[#E0E0E0] border-1 mx-[14px] rounded text-sm text-[min(2vw,0.875rem)] ${poppins.className}`}>
@@ -255,7 +255,7 @@ export default function ProductDetails() {
                          </div>
                         
                     </div>
-                  <div className="bg-white rounded  lg:w-[799px] w-full lg:h-[326px] h-full pb-15 lg:pb-0 ">
+                  <div className="bg-white rounded  flex-[1_1_799px] w-full lg:h-[326px] h-full pb-15 lg:pb-0 ">
   <h2 className=" lg:pt-[19px] pt-2 pl-[16px] text-base">Keepa</h2>
   <p className="text-[#FF9900] lg:pt-[14px] pt-2 lg:pb-[5px] pl-[23px] font-semibold text-lg">Keepa Graph</p>
 
@@ -280,7 +280,7 @@ export default function ProductDetails() {
                         
                          </div>
                           <div className='flex items-center gap-x-[18px] mt-3 lg:mt-[30px] gap-y-2 lg:gap-y-0 lg:flex-row flex-col'>
-                          <div className='bg-white rounded  h-[343px]  lg:w-[609px] w-full '>
+                          <div className='bg-white rounded  h-[343px]  flex-[1_1_609px] w-full '>
                             <h2 className={`${montserrat.className} mt-[19px] pl-[14px] text-xs font-semibold`}>EU Chart</h2>
                             <div className=' mt-[6px] lg:pr-[12px] px-3  flex lg:flex-row flex-col gap-y-2 lg:gap-y-0  gap-x-3 items-baseline  justify-end '>
                               <p className={` lg:pl-[14px] text-xs font-medium ${montserrat.className}`}>ROI%</p>
@@ -311,7 +311,7 @@ export default function ProductDetails() {
   ))}
 </div>
                           </div>
-                          <div className='bg-white rounded  lg:w-[503px] w-full h-[343px] px-[14px]'>
+                          <div className='bg-white rounded  flex-[1_1_503px] w-full h-[343px] px-[14px]'>
                             <h2 className={`${montserrat.className} text-[#2F2F2F] font-semibold pt-[19px] pb-[35px] `}>News & Updates</h2>
                             <h2 className={`${poppins.className} text-[#FF9900] font-semibold text-lg pb-[11px]`}>Update Name</h2>
                            <p className={`${poppins.className} text-[#9A9A9A] text-sm font-normal`}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,</p>

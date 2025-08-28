@@ -30,7 +30,7 @@ export default function ProductTracking() {
 
     const initializeDataTable = async () => {
       try {
-        // Dynamically import jQuery and DataTables
+        
         const $ = (await import("jquery")).default;
         await import("datatables.net-dt");
         
@@ -46,18 +46,18 @@ export default function ProductTracking() {
           dom: "t", 
         });
 
-        // Search functionality
+      
         $("#productSearch").on("keyup", function () {
           table.search(this.value).draw();
         });
 
-        // Entries select functionality
+       
         $("#entriesSelect").on("change", function () {
           const len = Number(this.value) || 10;
           table.page.len(len).draw();
         });
 
-        // Pagination rendering
+      
         function renderPagination() {
           const info = table.page.info();
           let html = "";
@@ -86,7 +86,7 @@ export default function ProductTracking() {
             }
           });
 
-          // Showing info
+        
           const start = info.recordsDisplay === 0 ? 0 : info.start + 1;
           const end = info.recordsDisplay === 0 ? 0 : info.end;
           $("#productInfo").text(`Showing ${start} to ${end} of ${info.recordsDisplay} Entries`);
@@ -114,7 +114,7 @@ export default function ProductTracking() {
         <Navbar heading="Product Tracking" />
 
         <div className="mt-[30px] mx-[33px]">
-          {/* Top Controls */}
+         
           <div className="flex flex-col md:flex-row justify-between items-center mb-[15px] ">
             <span
               className={`text-sm text-normal text-[#696969] ${poppins.className} mb-2 flex items-center gap-x-[8px]`}
@@ -149,8 +149,8 @@ export default function ProductTracking() {
             </div>
           </div>
 
-          {/* Table */}
-          <div className="overflow-x-auto shadow-lg shadow-black/5">
+        
+          <div className="overflow-x-auto shadow-lg shadow-black/5 rounded">
             <table ref={tableRef} className={`w-full min-w-[900px] ${montserrat.className}`}>
               <thead className="bg-[#F8F8F8] font-semibold text-xs md:text-sm">
                 <tr>
@@ -181,7 +181,7 @@ export default function ProductTracking() {
             </table>
           </div>
 
-          {/* Footer */}
+        
           <div className="flex lg:flex-row flex-col justify-between text-xs mt-[9px] mb-5">
             <span id="productInfo" className="text-[#9E9E9E] text-center md:text-start mb-2 md:mb-0">
               Showing 0 to 0 of 0 Entries

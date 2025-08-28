@@ -121,8 +121,8 @@ useEffect(() => {
             </div>
           </div>
 
-          <div className="overflow-x-auto shadow-lg shadow-black/5 mt-[15px]">
-            <table ref={tableRef} id="monitoringTable" className="min-w-[900px] w-full">
+          <div className="overflow-x-auto  shadow-lg shadow-black/5 mt-[15px] rounded">
+            <table ref={tableRef} id="monitoringTable" className="min-w-[900px] w-full ">
               <thead className={`bg-[#F8F8F8] text-sm font-semibold ${montserrat.className}`} >
                 <tr className="text-center">
                   <th className=" py-[15px] cursor-pointer" > USER </th>

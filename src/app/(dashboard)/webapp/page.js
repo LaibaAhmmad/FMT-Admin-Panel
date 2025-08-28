@@ -148,7 +148,7 @@ export default function WebApp() {
               </div>
             </div>
 
-            <div className="overflow-x-auto shadow-lg shadow-black/5 mt-[15px]">
+            <div className="overflow-x-auto shadow-lg shadow-black/5 mt-[15px]  rounded">
               <table ref={tableRef} className="min-w-[900px] w-full border-collapse">
                 <thead>
                   <tr className="bg-[#F8F8F8] text-sm font-semibold">

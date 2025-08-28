@@ -104,7 +104,7 @@ export default function Devices() {
       </span>
     );
 
-    // Always show first page
+   
     pages.push(
       <button
         key={0}
@@ -117,12 +117,11 @@ export default function Devices() {
       </button>
     );
 
-    // Ellipsis before current group
     if (current > 2) {
       pages.push(showEllipsis("start"));
     }
 
-    // Middle pages (current -1, current, current +1)
+    
     for (let i = Math.max(1, current - 1); i <= Math.min(totalPages - 2, current + 1); i++) {
       pages.push(
         <button
@@ -137,12 +136,12 @@ export default function Devices() {
       );
     }
 
-    // Ellipsis after current group
+    
     if (current < totalPages - 3) {
       pages.push(showEllipsis("end"));
     }
 
-    // Always show last page if > 1
+    
     if (totalPages > 1) {
       pages.push(
         <button
@@ -161,7 +160,8 @@ export default function Devices() {
   };
 
   return (
-    <div className="text-center flex flex-col rounded w-full pb-20">
+    <div className="text-center flex flex-col rounded w-full pb-20  
+">
       <h1 className="text-center font-semibold text-[22px] md:mt-[56px] mt-5">
         Devices
       </h1>
@@ -184,7 +184,7 @@ export default function Devices() {
 
       <div className="flex justify-center items-center">
         <div className="max-w-[709px] w-full mt-[12px]">
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto drop-shadow-[0_4px_6px_rgba(0,0,0,0.06)] rounded">
             <table
               ref={tableRef}
               className="text-left border-collapse min-w-max w-full"
@@ -243,7 +243,7 @@ export default function Devices() {
               {pageInfo.recordsTotal} Entries
             </span>
             <div className="rounded border-[#D8D6DE] border-[1px] text-[#909090] bg-white px-2 py-1 mb-4 md:mb-0 flex items-center justify-center md:justify-start gap-2">
-              {/* Previous */}
+            
               <button
                 className="px-3 py-1 disabled:opacity-50 rounded"
                 onClick={() => goToPage(pageInfo.page - 1)}
@@ -252,10 +252,9 @@ export default function Devices() {
                 Previous
               </button>
 
-              {/* Page numbers with ellipsis */}
               {renderPagination()}
 
-              {/* Next */}
+         
               <button
                 className="px-3 py-1 disabled:opacity-50 rounded"
                 onClick={() => goToPage(pageInfo.page + 1)}

@@ -46,7 +46,7 @@ export default function Navbar({heading}) {
 <p className={`text-sm text-[#777777] leading-[0px] m-0 p-0 ${montserrat.className}  text-[min(2vw,0.875rem)] font-normal cursor-pointer` } onClick={() =>{ redirect('/account')}}  >Account</p>
 </div>
 <div className='relative'>
-<div className='bg-white rounded-full flex items-center  p-1 md:p-2 ' onClick={()=>{setopenDropdown(!openDropdown)}}> 
+<div className='bg-white drop-shadow-[0_4px_6px_rgba(0,0,0,0.1)] rounded-full flex items-center  p-1 md:p-2 ' onClick={()=>{setopenDropdown(!openDropdown)}}> 
     <Image src={pp} alt='notfound'/>
 </div>
 {openDropdown && <div className={`absolute bg-white rounded right-2 ${poppins.className} w-[127px] h-[113px] top-13 `}>

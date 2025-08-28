@@ -23,7 +23,7 @@ export default function Account() {
         <Navbar heading="Account"/>
           <div className=' mt-[30px] mx-[33px]'>
             <div className='flex lg:flex-row flex-col gap-x-[22px] gap-y-3 lg:gap-y-0'>
-            <div className='bg-white rounded   lg:w-[426px] w-full md:h-[386px] h-full px-[16px]  pb-2 lg:pb-0'> 
+            <div className='bg-white rounded   flex-[1_1_426px]    md:h-[386px] md:w-auto h-full px-[16px]  pb-2 lg:pb-0'> 
                 <h1 className={`${montserrat.className} text-lg font-semibold text-[#2F2F2F] mt-[22px]`}>Change Password</h1>
                 <p className={`${poppins.className} text-xs font-normal text-[#909090] mt-[12px]`}><span className='text-[#FF9900] '>Note:</span> Your password must be minimum of 8 characters long and include atleast one capital letter and oone number.</p>
                 <p  className={`${poppins.className} text-xs font-normal text-[#909090]  mt-[16px]`}>Current Password</p>
@@ -36,7 +36,7 @@ export default function Account() {
                         <button className={`bg-[#FF9900] text-white text-sm md:text-base font-semibold py-2 md:py-[7px]  px-[18px] ${montserrat.className} rounded`}>Update</button>
                        </div>
             </div>
-            <div className='bg-white rounded   lg:w-[678px] w-full h-[386px] px-[16px] pb-2 lg:pb-0'>
+            <div className='bg-white rounded   md:w-auto flex-[1_1_678px] h-[386px] px-[16px] pb-2 lg:pb-0'>
                 <h1 className={` ${montserrat.className} text-2xl text-[#2F2F2F] md:mt-[24px] mt-2 font-semibold text-[min(4vw,1.5rem)]`}>Subscription</h1>
                 <p className={`text-[#909090] text-xs md:text-sm ${poppins.className} md:mt-[39px] mt-2`}>Your Subscription will renew on <span className='text-[#FF9900]'>8th March, 2021</span></p>
                    <button className={`text-white bg-[#F44336] text-lg font-semibold ${montserrat.className} rounded md:mt-[16px] mt-2  py-2 md:py-[10px] px-[26px] text-[min(3vw,1.125rem)] ` } >Cancel Subscription</button>
@@ -44,7 +44,7 @@ export default function Account() {
                 <button className={`text-[#FF9900] bg-[#FFDAB97D]  text-sm md:text-[15px] mt-[22px] rounded py-2 md:py-[7px] px-[21px]`} onClick={()=>{ redirect('/account/cardDetails')} } >Change Payment Details</button>
             </div>
              </div>
- <div className='bg-white rounded lg:mt-[27px] mt-3 lg:max-w-[1127px] w-full overflow-x-auto'>
+ <div className='bg-white rounded lg:mt-[27px] mt-3  md:w-auto flex-[1_1_1127px] w-full overflow-x-auto'>
     <h1 className={`text-lg font-semibold text-[#2F2F2F] ${montserrat.className} pt-[21px] mb-[15px] ml-[25px]`}>Subscription</h1>
    <div className=" pl-[25px] pr-[33px]  py-[15px] min-w-[900px]">
   <div
