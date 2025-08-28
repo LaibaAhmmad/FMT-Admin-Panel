@@ -125,7 +125,7 @@ useEffect(() => {
             <table ref={tableRef} id="monitoringTable" className="min-w-[900px] w-full">
               <thead className={`bg-[#F8F8F8] text-sm font-semibold ${montserrat.className}`} >
                 <tr className="text-center">
-                  <th className=" py-[15px] cursor-pointer" onClick={() => redirect('/monitoring/profile')} > USER </th>
+                  <th className=" py-[15px] cursor-pointer" > USER </th>
                   <th className="">EMAIL</th>
                   <th className="">LAST ACTIVE</th>
                   <th className="">WAGE P/H</th>
@@ -165,7 +165,8 @@ useEffect(() => {
 
                     <td className="text-center">
                       <button
-                        className={`cursor-pointer border-1 border-[#FF9900] rounded text-[#FF9900] text-xs ${montserrat.className} md:w-[71px] w-[50px] md:h-[29px] h-[22px]`}
+                       className={`cursor-pointer border-1 border-[#FF9900] rounded text-[#FF9900] text-xs ${montserrat.className} md:w-[71px] w-[50px] md:h-[29px] h-[22px]`}
+                      onClick={() => redirect('/Monitoring/profile')}
                       >
                         VIEW
                       </button>

@@ -280,14 +280,14 @@ export default function ProductDetails() {
                         
                          </div>
                           <div className='flex items-center gap-x-[18px] mt-3 lg:mt-[30px] gap-y-2 lg:gap-y-0 lg:flex-row flex-col'>
-                          <div className='bg-white rounded  h-[343px]  lg:w-[609px] w-full'>
-                            <h2 className={`${montserrat.className} pt-[19px] pl-[14px] text-xs font-semibold`}>EU Chart</h2>
-                            <div className=' pt-[16px] lg:pr-[12px] px-3  flex lg:flex-row flex-col gap-y-2 lg:gap-y-0  gap-x-3 items-baseline  justify-end '>
-                              <p className={`pt-[19px] lg:pl-[14px] text-xs font-medium ${montserrat.className}`}>ROI%</p>
+                          <div className='bg-white rounded  h-[343px]  lg:w-[609px] w-full '>
+                            <h2 className={`${montserrat.className} mt-[19px] pl-[14px] text-xs font-semibold`}>EU Chart</h2>
+                            <div className=' mt-[6px] lg:pr-[12px] px-3  flex lg:flex-row flex-col gap-y-2 lg:gap-y-0  gap-x-3 items-baseline  justify-end '>
+                              <p className={` lg:pl-[14px] text-xs font-medium ${montserrat.className}`}>ROI%</p>
                               <input className={`bg-[#F5F5F5] text-xs  lg:w-[165px] w-full lg:h-[30px] h-auto text-black ${montserrat.className} font-semibold py-[7px] pl-[11px]`} placeholder=''  />
                              <p className={`${poppins.className} font-normal text-xs`}>Buy Price: 30.20</p>
                             </div>
-                          <div className="mt-[13px] mx-[10px] border border-white shadow-md rounded-b ">
+                          <div className="mt-[13px] mx-[10px] border border-white shadow-md rounded-b h-[237px]">
   
   <div className={`flex pl-[22px] md:text-xs text-[9px] lg:pr-[10px] lg:py-[10px] gap-x-1 md:gap-x-0  md:text-xs text-[9px] font-semibold border border-[#CFCFCF] rounded-t bg-[#F8F8F8]  ${montserrat.className}`}>
     <div className="flex-1 text-left">REGION</div>
