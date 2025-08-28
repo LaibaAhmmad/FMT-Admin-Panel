@@ -103,7 +103,7 @@ useEffect(() => {
         <div className={`mt-[30px] mx-[33px] ${poppins.className}`}>
           <div className="flex flex-col md:flex-row justify-between pt-0 md:pt-[29px]">
             <div className="flex items-center justify-between md:justify-start gap-3 md:mb-0 mb-2">
-              <h2 className="font-semibold text-xl text-[min(3vw,1.25rem)]">
+              <h2 className="font-semibold text-xl text-[min(3vw,1.25rem)] text-[#2F2F2F]">
                 Calender Time Tracking
               </h2>
               <button className={`flex items-center gap-2 text-white bg-[#FF9900] rounded lg:py-[7px] lg:w-[84px] lg:h-[29px] py-1 px-[9px] ${montserrat.className} text-xs`} >

@@ -26,10 +26,10 @@ export default function Plans() {
     <div className='flex gap-x-[10px]'>
         <div className='flex flex-col md:flex-row gap-x-[6px]'>
       <h2 className='md:text-base text-sm'>Bill Monthly</h2>
-<label class="relative inline-flex items-center cursor-pointer">
+<label className="relative inline-flex items-center cursor-pointer">
   <input type="checkbox" className="sr-only peer"/>
   <div
-    class="relative w-[40px] h-[20px] bg-[#F5F1EA] border border-[#FF9900] rounded-full
+    className="relative w-[40px] h-[20px] bg-[#F5F1EA] border border-[#FF9900] rounded-full
            after:content-[''] after:absolute after:top-0.5 after:left-0.5
            after:bg-[#FF9900] after:rounded-full after:h-[14px] after:w-[14px]
            after:transition-all peer-checked:after:translate-x-[22px]">
@@ -42,11 +42,11 @@ export default function Plans() {
   </button>
 </div>
     </div>
-    <div className='flex flex-col md:flex-row items-center gap-x-[20px]'>
+    <div className='flex  flex-col md:flex-row items-center gap-x-[20px]'>
         <div className='flex gap-x-1 items-center'>
      <span className='text-sm md:text-base font-normal text-[#2F2F2F]'>USB</span>
-     <label class="relative inline-flex items-center cursor-pointer">
-  <input type="checkbox" class="sr-only peer"/>
+     <label className="relative inline-flex items-center cursor-pointer">
+  <input type="checkbox" className="sr-only peer"/>
   <div
     className="relative w-[40px] h-[20px] bg-[#F5F1EA] border border-[#909090] rounded-full
            after:content-[''] after:absolute after:top-0.5 after:left-0.5
@@ -64,8 +64,8 @@ export default function Plans() {
 <button className={`${montserrat.className} bg-[#FFDAB97D] font-semibold text-[#ff9900] px-[10px] py-[4px] rounded mt-3 md:mt-0 text-sm md:text-base`}>Feedback</button>
     </div>
 </div>
- <div className='flex flex-col lg:flex-row gap-x-[17px] lg:gap-y-0 gap-2 mt-[30px]'>
-    <div className={`bg-white rounded md:w-auto w-full h-[449px] flex-1`}>
+ <div className='flex  flex-col lg:flex-row gap-x-[17px] lg:gap-y-0 gap-y-4 mt-[30px]'>
+    <div className={`bg-white rounded  h-[449px] flex-1`}>
 <button className={`bg-[#FF9900] text-white ml-[24px] ${poppins.className} text-xs font-normal px-[6px] py-[3px] rounded mt-[24px]`}>Active</button>
      <div className='border-b border-[#E9E9E9]  pb-[29px] mt-[13px]'>
     <p className={`${montserrat.className} text-[#2F2F2F] font-semibold md:text-[28px] text-[24px] pl-[24px] pr-[26px] `}>Free</p>
@@ -81,7 +81,7 @@ export default function Plans() {
     <button className=' py-2 lg:py-[13px] w-full bg-[#FFDAB980] text-[#FF990099] mb-3 lg: mb-0 text-sm md:text-base'>Subscribed</button>
   </div>
     </div>
-     <div className={`bg-[#F6E4D3] shadow-[0_4px_6px_rgba(0,0,0,0.15)] rounded h-[449px] md:w-auto w-full flex-1`}>
+     <div className={`bg-[#F6E4D3] shadow-[0_4px_6px_rgba(0,0,0,0.15)] rounded h-[449px]  flex-1`}>
 
      <div className='border-b border-[#FF9900]  pb-[29px] pt-[58px] relative'>
     <p className={`${montserrat.className} text-[#2F2F2F] font-semibold  md:text-[28px] text-[24px]   pl-[24px] pr-[26px] `}>Starter</p>
@@ -100,7 +100,7 @@ export default function Plans() {
     <button className='py-2 lg:py-[13px] w-full bg-[#ff9900] text-white mb-3 lg: mb-0 text-sm md:text-base'>Upgrade Plan</button>
   </div>
     </div>
-     <div className={`bg-white rounded h-[449px] md:w-auto w-full flex-1`}>
+     <div className={`bg-white rounded h-[449px]   flex-1`}>
 
      <div className='border-b border-[#E9E9E9] pb-[29px] pt-[58px] '>
     <p className={`${montserrat.className} text-[#2F2F2F] font-semibold  md:text-[28px] text-[24px]   pl-[24px] pr-[26px]`}>Personal</p>
