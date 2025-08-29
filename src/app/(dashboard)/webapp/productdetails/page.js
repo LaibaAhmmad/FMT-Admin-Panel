@@ -40,7 +40,7 @@ ChartJS.register(
 import Image from 'next/image'
 import { Poppins } from "next/font/google";
 import { Montserrat } from "next/font/google";
-
+import { useSidebar } from '@/app/sidebarContext'
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "700"], 
@@ -136,7 +136,7 @@ const config = {
   }
 };
 export default function ProductDetails() {
-  
+   const { isOpen, setIsOpen } = useSidebar();
   return (
           <div className='bg-[#EDEDED] pb-7 w-full overflow-x-hidden '>
                <div className="flex-1 ml-15 md:ml-0  ">
@@ -255,11 +255,11 @@ export default function ProductDetails() {
                          </div>
                         
                     </div>
-                  <div className="bg-white rounded  flex-[1_1_799px] w-full lg:h-[326px] h-full pb-15 lg:pb-0 ">
-  <h2 className=" lg:pt-[19px] pt-2 pl-[16px] text-base">Keepa</h2>
-  <p className="text-[#FF9900] lg:pt-[14px] pt-2 lg:pb-[5px] pl-[23px] font-semibold text-lg">Keepa Graph</p>
+                  <div className="bg-white rounded  flex-[1_1_799px] lg:h-[326px] h-auto w-full  pb-15 lg:pb-0 ">
+  <h2 className=" lg:mt-[19px] mt-4 pl-[16px] text-base">Keepa</h2>
+  <p className="text-[#FF9900] lg:mt-[14px] mt-4 lg:pb-[5px] pl-[23px] font-semibold text-lg">Keepa Graph</p>
 
-  <div className="px-[16px]  h-[192px] md:w-[630px] w-full">
+  <div className={`px-[16px] lg:h-[192px] h-[500px] md:w-[630px] w-full ${isOpen ? "mx-0" : "mx-auto"}`}>
     <p className=' text-sm ml-2 mt-2 md:mt-0'>LEGO 60226 CITY MARS RESEARCH SHUTTLE SPACESHIP CONSTRUCTION TOYS FOR..</p>
     <Line
       data={config.data}
@@ -268,7 +268,7 @@ export default function ProductDetails() {
         responsive: true,
         maintainAspectRatio: false,
       }}
-      className="w-full h-full"
+      className='h-full w-full'
     />
   </div>
 
@@ -280,7 +280,7 @@ export default function ProductDetails() {
                         
                          </div>
                           <div className='flex items-center gap-x-[18px] mt-3 lg:mt-[30px] gap-y-2 lg:gap-y-0 lg:flex-row flex-col'>
-                          <div className='bg-white rounded  h-[343px]  flex-[1_1_609px] w-full '>
+                          <div className='bg-white rounded  lg:h-[343px] h-full flex-[1_1_609px] w-full '>
                             <h2 className={`${montserrat.className} mt-[19px] pl-[14px] text-xs font-semibold`}>EU Chart</h2>
                             <div className=' mt-[6px] lg:pr-[12px] px-3  flex lg:flex-row flex-col gap-y-2 lg:gap-y-0  gap-x-3 items-baseline  justify-end '>
                               <p className={` lg:pl-[14px] text-xs font-medium ${montserrat.className}`}>ROI%</p>
@@ -299,7 +299,7 @@ export default function ProductDetails() {
 
  
   {EUdata.map((item, i) => (
-    <div key={i} className="flex lg:pl-[22px] lg:pr-[10px] py-2 hover:bg-[#F8F8F8] md:text-base text-xs ">
+    <div key={i} className="flex lg:pl-[22px] lg:pr-[10px] lg:py-2 py-9 hover:bg-[#F8F8F8] md:text-base text-xs ">
       <div className="flex-1 text-left pl-5 md:pl-0 ">
         <Image src={item.region} alt="flag" />
       </div>
@@ -311,7 +311,7 @@ export default function ProductDetails() {
   ))}
 </div>
                           </div>
-                          <div className='bg-white rounded  flex-[1_1_503px] w-full h-[343px] px-[14px]'>
+                          <div className='bg-white rounded  flex-[1_1_503px] w-full lg:h-[343px] h-full px-[14px]'>
                             <h2 className={`${montserrat.className} text-[#2F2F2F] font-semibold pt-[19px] pb-[35px] `}>News & Updates</h2>
                             <h2 className={`${poppins.className} text-[#FF9900] font-semibold text-lg pb-[11px]`}>Update Name</h2>
                            <p className={`${poppins.className} text-[#9A9A9A] text-sm font-normal`}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,</p>
