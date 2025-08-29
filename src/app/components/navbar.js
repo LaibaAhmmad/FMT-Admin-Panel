@@ -49,7 +49,7 @@ export default function Navbar({heading}) {
 <div className='bg-white drop-shadow-[0_4px_6px_rgba(0,0,0,0.1)] rounded-full flex items-center  p-1 md:p-2 ' onClick={()=>{setopenDropdown(!openDropdown)}}> 
     <Image src={pp} alt='notfound'/>
 </div>
-{openDropdown && <div className={`absolute bg-white rounded right-2 ${poppins.className} w-[127px] h-[113px] top-13 `}>
+{openDropdown && <div className={`absolute bg-white rounded right-2 ${poppins.className} w-[127px] h-[113px] top-13 z-50 `}>
   <div>
    <div className='flex items-center gap-x-2 text-sm font-normal hover:bg-[#F8F8F8] py-[3px]  mt-[10px] px-4 mx-1 rounded  cursor-pointer text-left' onClick={() =>{redirect('/account/plans')}}> <Image src={paper} alt='notfound' className=''/> <p className='text-sm font-normal text-[#6D6D6D]'>Plans</p></div>
      <div className='flex items-center gap-x-2 text-sm font-normal  hover:bg-[#F8F8F8]  py-[3px]  px-4 mx-1 rounded cursor-pointer text-left'> <Image src={settings2} alt='notfound'/> <p className='text-sm font-normal text-[#6D6D6D]'>Settings</p></div>
